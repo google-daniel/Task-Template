@@ -9,7 +9,9 @@
 
 // This function expands the board when the user clicks on the board header
 const $BGC = document.getElementById('main-header')
-  console.log($BGC.textContent)
+  $BGC.textContent = 'sample page'
+  $BGC.style.color = 'rgb(200,125,0)'
+
 
 function expandBoard(boardElement) {
     const boardContent = boardElement.querySelector(".board-content");
@@ -28,9 +30,9 @@ function expandBoard(boardElement) {
 function addTask() {
     const input = document.getElementById('new-task-input');
     const taskName = input.value;
-  
+    windows.alert('test msg')
     if (taskName.trim() === '') {
-      alert('タスク名を入力してください');
+      windows.alert('タスク名を入力してください');
       return;
     }
   
@@ -58,4 +60,6 @@ function addTask() {
   
   // 追加ボタンにクリックイベントリスナーを追加
   const addTaskBtn = document.getElementById('add-task-btn');
-  addTaskBtn.addEventListener('click', addTask);
+  button.addEventListener('click', () => {
+    button.style.backgroundColor = 'red'; // クリック時に青色に変更
+  });
