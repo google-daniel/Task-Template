@@ -8,8 +8,8 @@
 */
 
 // This function expands the board when the user clicks on the board header
-const $BGC = document.getElementById('main-header')
-  $BGC.textContent = 'sample page'
+const $BGC = document.getElementById('username')
+  $BGC.innerText = 'sample page'
   $BGC.style.color = 'rgb(200,125,0)'
 
 
@@ -30,9 +30,13 @@ function expandBoard(boardElement) {
 function addTask() {
     const input = document.getElementById('new-task-input');
     const taskName = input.value;
-    windows.alert('test msg')
+    
+    
+
+    addTaskBtn.style.backgroundColor = 'red'
     if (taskName.trim() === '') {
-      windows.alert('タスク名を入力してください');
+      window.alert('タスク名を入力してください');
+      addTaskBtn.style.backgroundColor = 'rgb(37, 130, 243)'
       return;
     }
   
@@ -56,10 +60,16 @@ function addTask() {
   
     // 入力欄をクリア
     input.value = '';
+    
+    addTaskBtn.style.backgroundColor = 'blue'
   }
   
   // 追加ボタンにクリックイベントリスナーを追加
   const addTaskBtn = document.getElementById('add-task-btn');
-  button.addEventListener('click', () => {
-    button.style.backgroundColor = 'red'; // クリック時に青色に変更
+  addTaskBtn.addEventListener('mouseover',()=>{
+    addTaskBtn.style.backgroundColor = 'red'
   });
+  addTaskBtn.addEventListener('mousedown',()=>{
+    addTaskBtn.style.backgroundColor = 'rgb(224, 90, 90)'
+  });
+  addTaskBtn.addEventListener('mouseup',addTask);
