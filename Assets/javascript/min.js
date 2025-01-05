@@ -8,6 +8,9 @@
 */
 
 // This function expands the board when the user clicks on the board header
+const $BGC = document.getElementById('main-header')
+  console.log($BGC.textContent)
+
 function expandBoard(boardElement) {
     const boardContent = boardElement.querySelector(".board-content");
     boardContent.classList.toggle("active"); // Toggles the "active" class on the board-content element
